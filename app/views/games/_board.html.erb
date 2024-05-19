@@ -1,0 +1,17 @@
+<p>Rendering board partial...</p>
+<table border="1">
+  <% (0..2).each do |row| %>
+    <tr>
+      <% (0..2).each do |col| %>
+        <td data-action="click->game#makeMove" data-game-row-value="<%= row %>" data-game-col-value="<%= col %>">
+          <% move = game.moves.find_by(position: row * 3 + col) %>
+          <% if move %>
+            <%= move.player == game.player_x ? 'X' : 'O' %>
+          <% else %>
+            &nbsp;
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

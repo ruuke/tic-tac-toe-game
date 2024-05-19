@@ -1,0 +1,8 @@
+<h1>Start a new game</h1>
+<%= form_with(model: @game, local: true) do |form| %>
+  <%= form.hidden_field :player_x_id, value: @game.player_x_id %>
+
+  <div class="actions">
+    <%= form.submit "Start Game" %>
+  </div>
+<% end %>

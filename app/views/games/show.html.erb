@@ -1,0 +1,12 @@
+<h1>Tic-Tac-Toe</h1>
+<div id="game_status">
+  <%= render partial: 'status', locals: { game: @game } %>
+</div>
+<div id="error_message"></div>
+<div id="game_board" data-controller="game" data-game-id="<%= @game.id %>">
+  <%= turbo_frame_tag "game_board" do %>
+    <%= debug(@game.id) %>
+    <%= render partial: 'board', locals: { game: @game } %>
+    <p>Rendering board...</p>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<!-- app/views/players/new.html.erb -->
+<h1>Enter your name to start the game</h1>
+<%= form_with(model: @player, local: true, url: players_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Start Game" %>
+  </div>
+<% end %>
